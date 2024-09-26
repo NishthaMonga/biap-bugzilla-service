@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import { ICreateBug, ICreateTicket } from '../interfaces/Bugs'
-import { CreateBugSchemaValidator,CreateTicketSchemaValidator } from '../utils/validator'
+import { CreateBugSchemaValidator } from '../utils/validator'
 import { logger } from '../shared/logger'
 import GetHttpRequest from '../utils/HttpRequest'
 import ProductService from './product.service'
@@ -148,10 +148,10 @@ class BugzillaBugService {
     }
 
     try {
-      const error = CreateTicketSchemaValidator(data)
+      // const error = CreateTicketSchemaValidator(data)
 
-      if (error) return res.status(500).json({ error: true, message: error.message })
-      logger.info('Hitting')
+      // if (error) return res.status(500).json({ error: true, message: error.message })
+      // logger.info('Hitting')
 
       const createBug = await axios({
         url: 'http://trudesk-dev-service:8118/api/v1/tickets/create',

@@ -1,5 +1,5 @@
 import axiosInstance from './AxiosInstance'
-import { TRUDESK } from './constant'
+import { TRUDESK } from '../utils/constant'
 
 /**
  * Used to communicate with server
